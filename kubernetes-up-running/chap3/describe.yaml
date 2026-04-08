@@ -1,0 +1,89 @@
+Name:               kind-control-plane
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=kind-control-plane
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 06 Apr 2026 08:20:44 +1000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  kind-control-plane
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 06 Apr 2026 08:44:46 +1000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 06 Apr 2026 08:44:13 +1000   Mon, 06 Apr 2026 08:20:42 +1000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 06 Apr 2026 08:44:13 +1000   Mon, 06 Apr 2026 08:20:42 +1000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 06 Apr 2026 08:44:13 +1000   Mon, 06 Apr 2026 08:20:42 +1000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 06 Apr 2026 08:44:13 +1000   Mon, 06 Apr 2026 08:21:07 +1000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.18.0.2
+  Hostname:    kind-control-plane
+Capacity:
+  cpu:                16
+  ephemeral-storage:  61202244Ki
+  hugepages-2Mi:      0
+  memory:             8025144Ki
+  pods:               110
+Allocatable:
+  cpu:                16
+  ephemeral-storage:  61202244Ki
+  hugepages-2Mi:      0
+  memory:             8025144Ki
+  pods:               110
+System Info:
+  Machine ID:                 91522f4cd1274bda81c383f090bb426d
+  System UUID:                91522f4cd1274bda81c383f090bb426d
+  Boot ID:                    ce526cf0-86ae-4ba1-a044-d14d7da608fd
+  Kernel Version:             6.12.76-linuxkit
+  OS Image:                   Debian GNU/Linux 12 (bookworm)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://2.1.3
+  Kubelet Version:            v1.34.0
+  Kube-Proxy Version:         
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+ProviderID:                   kind://docker/kind/kind-control-plane
+Non-terminated Pods:          (9 in total)
+  Namespace                   Name                                          CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                          ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-66bc5c9577-lcvkq                      100m (0%)     0 (0%)      70Mi (0%)        170Mi (2%)     23m
+  kube-system                 coredns-66bc5c9577-rc8xn                      100m (0%)     0 (0%)      70Mi (0%)        170Mi (2%)     23m
+  kube-system                 etcd-kind-control-plane                       100m (0%)     0 (0%)      100Mi (1%)       0 (0%)         24m
+  kube-system                 kindnet-6qsz8                                 100m (0%)     100m (0%)   50Mi (0%)        50Mi (0%)      23m
+  kube-system                 kube-apiserver-kind-control-plane             250m (1%)     0 (0%)      0 (0%)           0 (0%)         24m
+  kube-system                 kube-controller-manager-kind-control-plane    200m (1%)     0 (0%)      0 (0%)           0 (0%)         24m
+  kube-system                 kube-proxy-98vfc                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         23m
+  kube-system                 kube-scheduler-kind-control-plane             100m (0%)     0 (0%)      0 (0%)           0 (0%)         24m
+  local-path-storage          local-path-provisioner-7b8c8ddbd6-lkvwg       0 (0%)        0 (0%)      0 (0%)           0 (0%)         23m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                950m (5%)   100m (0%)
+  memory             290Mi (3%)  390Mi (4%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age                From             Message
+  ----    ------                   ----               ----             -------
+  Normal  Starting                 23m                kube-proxy       
+  Normal  Starting                 24m                kubelet          Starting kubelet.
+  Normal  NodeAllocatableEnforced  24m                kubelet          Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientMemory  24m (x8 over 24m)  kubelet          Node kind-control-plane status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    24m (x8 over 24m)  kubelet          Node kind-control-plane status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     24m (x7 over 24m)  kubelet          Node kind-control-plane status is now: NodeHasSufficientPID
+  Normal  Starting                 24m                kubelet          Starting kubelet.
+  Normal  NodeAllocatableEnforced  24m                kubelet          Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientMemory  24m                kubelet          Node kind-control-plane status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    24m                kubelet          Node kind-control-plane status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     24m                kubelet          Node kind-control-plane status is now: NodeHasSufficientPID
+  Normal  RegisteredNode           23m                node-controller  Node kind-control-plane event: Registered Node kind-control-plane in Controller
+  Normal  NodeReady                23m                kubelet          Node kind-control-plane status is now: NodeReady
