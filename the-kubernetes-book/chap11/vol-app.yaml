@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolumeClaim 
+metadata:
+  name: pvc2
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: sc-fast-repl
+  resources:
+    requests:
+      storage: 20Gi 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volpod
+spec:
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: pvc2
+  containers:
+    - name: nginx                  # You can change this to your desired image
+      image: nginx
+      volumeMounts:
+        - name: data               # Must match the volume name above
+          mountPath: /usr/share/nginx/html # The path inside the container
